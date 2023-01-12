@@ -7,6 +7,7 @@ import courseRoute from './routes/route.js';
 import cors from 'cors';
 import helmet from 'helmet';
 import path from 'path';
+import {fileURLToPath} from 'url';
 
 const router = express();
 
@@ -43,6 +44,9 @@ const StartServer = () => {
     /** Routes */
     router.use('/api', courseRoute);
     
+    const __filename = fileURLToPath(import.meta.url);
+
+    const __dirname = path.dirname(__filename);
     /**Serve frontend  */
     router.use(express.static(path.join(__dirname, "./course_frontend/dist")));
     router.get("*", function (_, res) {
