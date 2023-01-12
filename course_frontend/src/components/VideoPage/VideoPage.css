@@ -1,0 +1,24 @@
+.videoTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #055646;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.videoInfo {
+  margin: 0.5rem 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgb(181, 181, 181);
+  font-weight: 600;
+  color: #055646;
+}
+
+.videoControlButtons {
+  display: flex;
+  justify-content: space-between;
+}
