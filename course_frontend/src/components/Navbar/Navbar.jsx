@@ -22,7 +22,7 @@ const Navbar = ({ title }) => {
           }}
         >
         <div style={{ marginTop: "0.5rem", marginRight: "0.5rem" ,}}>
-            <button type="button" className="btn btn-primary btn-lg getHelp">
+            <button type="button" className="btn btn-primary btn-lg">
               <img
                 src="https://learn.pegasus.imarticus.org/images/Support.svg"
                 alt="Get-Help"
