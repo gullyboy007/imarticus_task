@@ -2,7 +2,11 @@ import "./Navbar.css";
 import React from "react";
 
 
+
 const Navbar = ({ title }) => {
+  function logout() {
+    window.open(`/auth/logout`, "_self");
+  }
   return (
     <>
       <div
@@ -63,14 +67,10 @@ const Navbar = ({ title }) => {
               </button>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
                 <li>
-                  
-                    Edit profile
-                  
+                  <a class="dropdown-item" href="#">Edit profile</a>
                 </li>
                 <li>
-                  
-                    Logout
-                  
+                  <a class="dropdown-item" href="javascript:logout()">Logout</a>
                 </li>
               </ul>
             </div>
