@@ -53,11 +53,11 @@ const Navbar = ({ title }) => {
           
         <div>
             <div className="dropdown">
-                <button>
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <span className="username">User</span>
                 <img
                   src="https://learn.pegasus.imarticus.org/images/downarrow.png"
-                  style={{ marginLeft: "5px" }}
+                  style={{ marginLeft: "5px" ,marginTop: "0.5rem",}}
                   alt="arrow-sign"
                 />
               </button>
