@@ -63,14 +63,14 @@ const Navbar = ({ title }) => {
               </button>
               <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
                 <li>
-                  <button className="dropdown-item" type="button">
+                  
                     Edit profile
-                  </button>
+                  
                 </li>
                 <li>
-                  <button className="dropdown-item" type="button">
+                  
                     Logout
-                  </button>
+                  
                 </li>
               </ul>
             </div>
