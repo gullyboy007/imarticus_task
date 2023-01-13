@@ -8,6 +8,14 @@ import cors from 'cors';
 import helmet from 'helmet';
 import path from 'path';
 import {fileURLToPath} from 'url';
+import passport from 'passport';
+import cookieSession from 'cookie-session';
+import authRoute from './routes/auth.js';
+//import './passport.js';
+import  './passport.js';
+
+
+
 
 const router = express();
 
@@ -35,13 +43,39 @@ const StartServer = () => {
         next();
     });
 
-    router.use(helmet());
+    router.use(function(req, res, next) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Methods", "*");
+        res.header("Access-Control-Allow-Headers", "*");
+        next();
+    });
+
+    router.use(
+	cookieSession({
+		name: "session",
+		keys: ["abhineet"],
+		maxAge: 24 * 60 * 60,
+	})
+    );
+    router.use(helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      "img-src": ["'self'", "https: data:"]
+    }
+  }));
     router.use(express.urlencoded({ extended: true }));
     router.use(express.json());
-    router.use(cors());
+    router.use(passport.initialize());
+    router.use(passport.session());
+    router.use(cors({
+        origin: "https://worrisome-shift-frog.cyclic.app",
+		methods: "GET,POST,PUT,DELETE",
+		credentials: true,
+    }));
 
     
     /** Routes */
+    router.use("/auth", authRoute);
     router.use('/api', courseRoute);
     
     const __filename = fileURLToPath(import.meta.url);

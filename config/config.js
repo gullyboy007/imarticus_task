@@ -9,6 +9,9 @@ const MONGO_URL = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@cluster0.9w
 
 const SERVER_PORT = process.env.SERVER_PORT ? Number(process.env.SERVER_PORT) : 1337;
 
+const GOOGLE_OAUTH_CLIENT_ID = process.env.GOOGLE_OAUTH_CLIENT_ID
+const GOOGLE_OAUTH_CLIENT_SECRET = process.env.GOOGLE_OAUTH_CLIENT_SECRET
+const GOOGLE_OAUTH_REDIRECT_URL = process.env.GOOGLE_OAUTH_REDIRECT_URL
 export const config = {
     mongo: {
         username: MONGO_USERNAME,
@@ -19,5 +22,11 @@ export const config = {
     },
     server: {
         port: SERVER_PORT
+    },
+    google: {
+        clientid: GOOGLE_OAUTH_CLIENT_ID,
+        clientsecret: GOOGLE_OAUTH_CLIENT_SECRET,
+        redirecturl: GOOGLE_OAUTH_REDIRECT_URL
     }
+
 };
