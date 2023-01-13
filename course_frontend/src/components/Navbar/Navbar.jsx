@@ -30,10 +30,8 @@ const Navbar = ({ title }) => {
               Get Help
             </button>
         </div>
-          
-        <div>
-            <div className="dropdown">
-              <button
+        <div style={{ marginTop: "0.5rem", marginRight: "0.5rem" ,}}>
+             <button
                 className="btn btn-secondary dropdown-toggle"
                 type="button"
                 id="dropdownMenu2"
@@ -50,6 +48,12 @@ const Navbar = ({ title }) => {
                   className="profileImage"
                   alt="profile"
                 />
+                </button>
+        </div>
+          
+        <div>
+            <div className="dropdown">
+                <button>
                 <span className="username">User</span>
                 <img
                   src="https://learn.pegasus.imarticus.org/images/downarrow.png"
