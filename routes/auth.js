@@ -41,6 +41,19 @@ router.get(
 	})
 );
 
+// facebook routes
+  router.get("/facebook", passport.authenticate("facebook"));
+
+  router.get(
+    "/facebook/callback",
+    passport.authenticate("facebook", { failureRedirect: "/login" }),
+    function(req, res) {
+      console.log("i am in fb callback");
+      // Successful authentication, redirect home.
+      res.redirect("/");
+    }
+  );
+
 router.get("/logout", (req, res) => {
 	req.logout();
 	res.redirect(config.google.redirecturl);

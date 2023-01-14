@@ -12,6 +12,9 @@ const SERVER_PORT = process.env.SERVER_PORT ? Number(process.env.SERVER_PORT) : 
 const GOOGLE_OAUTH_CLIENT_ID = process.env.GOOGLE_OAUTH_CLIENT_ID
 const GOOGLE_OAUTH_CLIENT_SECRET = process.env.GOOGLE_OAUTH_CLIENT_SECRET
 const GOOGLE_OAUTH_REDIRECT_URL = process.env.GOOGLE_OAUTH_REDIRECT_URL
+
+const FB_APPID = FB_APPID
+const FB_APPSECRET = FB_APPSECRET
 export const config = {
     mongo: {
         username: MONGO_USERNAME,
@@ -27,6 +30,11 @@ export const config = {
         clientid: GOOGLE_OAUTH_CLIENT_ID,
         clientsecret: GOOGLE_OAUTH_CLIENT_SECRET,
         redirecturl: GOOGLE_OAUTH_REDIRECT_URL
+    },
+    fb:{
+        appid:FB_APPID,
+        appsecret:FB_APPSECRET
+
     }
 
 };
