@@ -14,8 +14,10 @@ function App() {
 
 	const getUser = async () => {
 		try {
+			console.log('in get user')
 			const url = `https://worrisome-shift-frog.cyclic.app/auth/login/success`;
 			const { data } = await axios.get(url, { withCredentials: true });
+			console.log('after data fetched')
 			console.log(data)
 			setUser(data.user._json);
 		} catch (err) {
